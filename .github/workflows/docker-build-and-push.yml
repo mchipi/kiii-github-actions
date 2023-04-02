@@ -1,9 +1,9 @@
-name: ci
+name: docker-build-and-push
 
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
 
 jobs:
   docker:
@@ -28,6 +28,5 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: .
           push: true
           tags: mchipi/kiii-workflows:latest
